@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import '../src/'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  return (
+    <div class="container">
+      <label
+        className='rotulo'
+        htmlFor="Pergunta"
+      >Qual é a sua pergunta?
+      </label>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <input class="textfield" type="text" id="pergunta"></input>
+
+      <button className="botao">Enviar</button>
+
+      <label
+        className="rotulo"
+        htmlFor="Resposta"
+      >Resposta:
+      </label>
+
+      <input
+        className="textfield"
+        readOnly
+        type="text"
+        id="resposta"       
+      ></input>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.querySelector("#root"));
